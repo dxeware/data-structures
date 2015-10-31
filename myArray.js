@@ -1,4 +1,5 @@
-var array = ["blue", 3, "green", 10, "red"];
+var removeDuplicates = require('./duplicates');
+var findMostFrequent = require('./frequency');
 
 Array.prototype.myPush = function(item) {
 
@@ -58,5 +59,24 @@ Array.prototype.myUnshift = function(item) {
 
 };
 
+Array.prototype.myUnique = function() {
 
+  var uniqueArray = this.slice();
 
+  // Remove duplications in array
+  removeDuplicates(uniqueArray);
+
+  return uniqueArray;
+};
+
+Array.prototype.myFrequency = function() {
+
+  var char = '';
+
+  // Find most frequent letter in English word array
+  // Note: if letter appears more than once in
+  // word, it only counts as 1 appearance per word
+  char = findMostFrequent(this);
+
+  return char;
+};

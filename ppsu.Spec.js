@@ -1,7 +1,6 @@
 "use strict";
 
 var expect = require('chai').expect;
-var fs = require('fs');
 
 describe('push should add item to end of array', function() {
 

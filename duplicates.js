@@ -1,4 +1,4 @@
-function findDup(array) {
+function findDuplicates(array) {
   for (var i = 0; i < array.length; i++) {
     for (var j = i+1; j < array.length; j++) {
       if (array[i] === array[j]) {
@@ -9,12 +9,12 @@ function findDup(array) {
   return false;
 }
 
-function removeDups(array) {
+function removeDuplicates(array) {
 
   var index, dups = true;
   do {
     // Use findDup to return index of duplicate
-    index = findDup(array);
+    index = findDuplicates(array);
 
     //If duplicate found, remove it and continue
     // looking, otherwise stop looking - no more dups
@@ -29,14 +29,4 @@ function removeDups(array) {
   return array;
 }
 
-function unique(array) {
-
-  var uniqueArray = array.slice();
-
-  // Remove duplications in array
-  removeDups(uniqueArray);
-
-  return uniqueArray;
-}
-
-module.exports = unique;
+module.exports = removeDuplicates;

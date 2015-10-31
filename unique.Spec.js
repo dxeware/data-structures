@@ -1,8 +1,6 @@
 "use strict";
 
 var expect = require('chai').expect;
-var fs = require('fs');
-var unique = require('./unique');
 
 describe('unique module', function() {
 
@@ -10,7 +8,7 @@ describe('unique module', function() {
     var array = [1, "two", 1];
     var newArr = [];
 
-    newArr = unique(array);
+    newArr = array.myUnique();
 
     expect(newArr).to.deep.equal([1, "two"]);
     expect(newArr.length).to.equal(2);
@@ -21,7 +19,7 @@ describe('unique module', function() {
     var array = [1, "two", "two", 1];
     var newArr = [];
 
-    newArr = unique(array);
+    newArr = array.myUnique();
 
     expect(newArr).to.deep.equal([1, "two"]);
     expect(newArr.length).to.equal(2);
@@ -32,7 +30,7 @@ describe('unique module', function() {
     var array = [1, "two", "three", 1001];
     var newArr = [];
 
-    newArr = unique(array);
+    newArr = array.myUnique();
 
     expect(newArr).to.deep.equal([1, "two", "three", 1001]);
     expect(newArr.length).to.equal(4);
@@ -43,7 +41,7 @@ describe('unique module', function() {
     var array = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
     var newArr = [];
 
-    newArr = unique(array);
+    newArr = array.myUnique();
 
     expect(newArr).to.deep.equal([1]);
     expect(newArr.length).to.equal(1);
@@ -54,7 +52,7 @@ describe('unique module', function() {
     var array = [];
     var newArr = [];
 
-    newArr = unique(array);
+    newArr = array.myUnique();
 
     expect(newArr).to.deep.equal([]);
     expect(newArr.length).to.equal(0);
