@@ -22,7 +22,7 @@ describe('frequency method', function() {
     expect(char).to.equal('s');
   });
 
-  it('should return highest letter \'s\' when most frequent letter when letter frequency is tie', function() {
+  it('should return highest letter \'s\' when letter frequency is tie', function() {
     var array = ['shell', 'shawl', 'cat'];
     var char;
 
@@ -32,12 +32,12 @@ describe('frequency method', function() {
   });
 
   it('should ignore anything other than [a-z][A-Z]', function() {
-    var array = ['cat0', 'house1', 'bill1'];
+    var array = ['lat@xyz.com', 'ike@ben.en'];
     var char;
 
     char = array.myFrequency();
 
-    expect(char).to.equal('u');
+    expect(char).to.equal('z');
   });
 
 });
