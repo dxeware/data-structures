@@ -1,3 +1,5 @@
+"use strict";
+
 function findMostFrequent(array) {
 
   var char;
@@ -8,8 +10,9 @@ function findMostFrequent(array) {
   // Init object with alphabet chars as keys
   // and frequency set to 0
   var charObj = {};
-    for (var i = 0; i<26; i++)
-      charObj[charArray[i]] = 0;
+  for (var i = 0; i<26; i++) {
+    charObj[charArray[i]] = 0;
+  }
 
   // Convert array to all lowercase words
   for (i = 0; i < array.length; i++) {

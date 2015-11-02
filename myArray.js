@@ -1,3 +1,5 @@
+"use strict";
+
 var removeDuplicates = require('./duplicates');
 var findMostFrequent = require('./frequency');
 
