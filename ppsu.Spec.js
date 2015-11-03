@@ -37,8 +37,19 @@ describe('push should add item to end of array', function() {
     done();
   });
 
-  it('shift should remove undefined for array of 1 element', function(done) {
+  it('shift should return shifted element for array of 1 element', function(done) {
     var array = [1111];
+    var shiftedItem;
+
+    shiftedItem = array.myShift();
+
+    expect(shiftedItem).to.equal(1111);
+    expect(array.length).to.equal(0);
+    done();
+  });
+
+  it('shift should return undefined for empty array', function(done) {
+    var array = [];
     var shiftedItem;
 
     shiftedItem = array.myShift();
@@ -56,6 +67,18 @@ describe('push should add item to end of array', function() {
 
     expect(array).to.deep.equal(['pants', 100, 'mustache', 5000]);
     expect(array.length).to.equal(4);
+    done();
+  });
+
+  it('unshift should add item to empty array', function(done) {
+    var array = [];
+    var unshiftedLen;
+
+    unshiftedLen = array.myUnshift(100999);
+
+    expect(array).to.deep.equal([100999]);
+    expect(array.length).to.equal(1);
+    expect(unshiftedLen).to.equal(1);
     done();
   });
 

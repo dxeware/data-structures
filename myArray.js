@@ -34,15 +34,13 @@ Array.prototype.myShift = function() {
     this[i-1] = this[i];
   }
 
-  this.length--;
-
-  // If array is not empty, return the shifted
-  // item. If array is empty, return undefined
-  if (this.length) {
-    return shiftedItem;
-  } else {
-    return undefined;
+  // Only decrement length, if item removed
+  if (shiftedItem) {
+    this.length--;
   }
+
+  return shiftedItem;
+
 };
 
 Array.prototype.myUnshift = function(item) {
